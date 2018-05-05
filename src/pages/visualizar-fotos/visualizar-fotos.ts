@@ -36,7 +36,7 @@ export class VisualizarFotosPage {
     subscribe inserimos os dados na nossa lista e alterando no banco de dados automaticamente
     irá mudar a lista de todos os usuarios online
     */
-    this.fotosProvider.getByQuery('nome', this.local.payload.key).subscribe(resp => this.fotosmostrar = resp);
+   // this.fotosProvider.getByQuery('nome', this.local.payload.key).subscribe(resp => this.fotosmostrar = resp);
    
 
   }
