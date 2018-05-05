@@ -1,0 +1,49 @@
+<!--
+  Generated template for the CadastroLocalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-buttons start left>
+      <button ion-button (click)="voltarPagina()" style="color:black !important;">
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Cadastro de Produto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="localForm" (submit)="salvarProduto()" novalidate>
+    <ion-row padding>
+      <ion-item>
+        <ion-label floating>Nome do Produto</ion-label>
+        <ion-input #nome formControlName="nome" type="text" [class.invalid]="!localForm.controls.nome.valid && localForm.controls.nome.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!localForm.controls.nome.valid  && localForm.controls.nome.dirty">
+        <p>Informe o nome do Produto</p>
+      </ion-item>
+    </ion-row>
+
+    <ion-row padding>
+      <ion-item>
+        <ion-label floating>Valor</ion-label>
+        <ion-input #valor formControlName="valor" type="text" [class.invalid]="!localForm.controls.valor.valid && localForm.controls.valor.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!localForm.controls.valor.valid  && localForm.controls.valor.dirty">
+        <p>Preencha o preço.</p>
+      </ion-item>
+    </ion-row>
+
+    
+    <ion-row padding>
+      <button block type="submit" ion-button large>
+        Cadastrar produto</button>
+    </ion-row>
+  </form>
+
+
+</ion-content>
